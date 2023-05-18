@@ -1,15 +1,23 @@
 .root{
     -fx-font-size: 16pt;
     -fx-font-family: "Comic Sans";
-    -fx-base: rgb(132, 145, 47);
-    -fx-background: rgb(225, 228, 203);
+    -fx-base: #eef5fe;
+    -fx-background: #eef5fe;
 }
 #title{
-    -fx-font-size: 25pt;
-    -fx-text-fill: #ff2d00;
+    -fx-font-size: 40pt;
+    -fx-text-fill: #1f579e;
 }
 #startbtn {
-    -fx-font-size: 10px;
-    -fx-base: #ff2d00;
-
+    -fx-font-size: 30px;
+    -fx-base: #1f579e;
+    -fx-background-radius: 30px;
+}
+#square{
+    -fx-font-size: 50px;
+    -fx-base: #1f579e;
+    -fx-border-color: black;
+    -fx-boarder-width: 10px;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 200px;
 }
