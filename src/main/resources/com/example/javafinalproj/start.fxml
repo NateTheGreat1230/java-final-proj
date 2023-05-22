@@ -4,6 +4,6 @@
 <?import javafx.scene.layout.VBox?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.javafinalproj.Main">
    <Label fx:id="title" text="Tic Tac Toe" stylesheets="@style.css" id="title"/>
-   <Button text="Start" onAction="#startclick" id="startbtn"/>
-   <!--<Button text="Start2" onAction="#startclick" id="startbtn"/>-->
+   <Button text="Singleplayer" onAction="#singleclick" id="startbtn"/>
+   <Button text="Multiplayer" onAction="#multiclick" id="startbtn"/>
 </VBox>

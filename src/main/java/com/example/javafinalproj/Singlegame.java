@@ -3,7 +3,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import java.util.Objects;
-public class Game {
+import java.util.Random;
+
+public class Singlegame {
     int turns;
     int checkturn;
     boolean won = false;
@@ -31,16 +33,45 @@ public class Game {
     Button sq8;
     @FXML
     Button sq9;
+    public void botTurn() {
+        Random rand = new Random();
+        int num;
+        if (sq1.getText().equals("X")&& turns==1){
+            num =9;
+        }else {
+            num = rand.nextInt(1,9);
+        }
+        if (num ==1){
+            square1();
+        } else if (num ==2){
+            square2();
+        } else if (num ==3){
+            square3();
+        } else if (num ==4){
+            square4();
+        } else if (num ==5){
+            square5();
+        } else if (num ==6){
+            square6();
+        } else if (num ==7){
+            square7();
+        } else if (num ==8){
+            square8();
+        } else if (num ==9){
+            square9();
+        }
+    }
     public void trackturns() {
         if (turns%2==0&& !won){
-            turn.setText("Player X turn");
+            turn.setText("Your turn");
             checkturn = 0;
         } else if (won||turns==9) {
             turn.setText("");
         }
         else {
-            turn.setText("Player O turn");
+            turn.setText("...");
             checkturn = 1;
+            botTurn();
         }
     }
     public void setTurns(Button button) {
@@ -102,13 +133,13 @@ public class Game {
         }
     }
     public void testWin(String testwin){
-        if(testwin.equals("XXX")&& !Objects.equals(winner.getText(), "Player O wins!")){
-            winner.setText("Player X wins!");
+        if(testwin.equals("XXX")&& !Objects.equals(winner.getText(), "You loose!")){
+            winner.setText("You win!");
             won = true;
-        }else if(testwin.equals("OOO")&& !Objects.equals(winner.getText(), "Player X wins!")){
-            winner.setText("Player O wins!");
+        }else if(testwin.equals("OOO")&& !Objects.equals(winner.getText(), "You win!")){
+            winner.setText("You loose!");
             won = true;
-        }else if (turns == 9 && !Objects.equals(winner.getText(), "Player O wins!") && !Objects.equals(winner.getText(), "Player X wins!")){
+        }else if (turns == 9 && !Objects.equals(winner.getText(), "You loose!") && !Objects.equals(winner.getText(), "You win!")){
             winner.setText("This game was a draw!");
         }
     }
